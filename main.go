@@ -11,6 +11,7 @@ var count = 0
 
 func main() {
 	router := gin.Default()
+	gin.SetMode(gin.ReleaseMode)
 	router.Static("/static", "./static")
 	router.LoadHTMLGlob("template/*")
 
