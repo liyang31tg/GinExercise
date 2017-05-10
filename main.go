@@ -10,8 +10,9 @@ import (
 var count = 0
 
 func main() {
+	gin.SetMode(gin.DebugMode)
 	router := gin.Default()
-	gin.SetMode(gin.ReleaseMode)
+
 	router.Static("/static", "./static")
 	router.LoadHTMLGlob("template/*")
 
