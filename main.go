@@ -23,6 +23,10 @@ func main() {
 		c.JSON(200, map[string]string{"version": "v1", "method": "get"})
 	})
 
+	v1.GET("/login", func(c *gin.Context) {
+		c.JSON(200, map[string]string{"code": 1, "data": "登陆成功"})
+	})
+
 	v1.GET("/echo", func(c *gin.Context) {
 
 		conn, err := websocket.Upgrade(c.Writer, c.Request, nil, 1024, 1024)
